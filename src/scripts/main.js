@@ -21,10 +21,10 @@ thead.addEventListener('click', (sort) => {
     const aText = a.children[index].textContent;
     const bText = b.children[index].textContent;
 
-    if (!isNaN(Number(aText)) && !isNaN(Number(bText))) {
-      const aClean = aText.replace(/\$|,/g, '');
-      const bClean = bText.replace(/\$|,/g, '');
+    const aClean = aText.replace(/\$|,/g, '');
+    const bClean = bText.replace(/\$|,/g, '');
 
+    if (!isNaN(Number(aClean)) && !isNaN(Number(bClean))) {
       return Number(aClean) - Number(bClean);
     } else {
       return aText.localeCompare(bText);
