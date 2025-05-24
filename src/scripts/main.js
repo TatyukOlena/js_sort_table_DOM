@@ -3,6 +3,10 @@
 const thead = document.querySelector('thead');
 
 thead.addEventListener('click', (sort) => {
+  if (sort.target.tagName !== 'TH') {
+    return;
+  }
+
   const headers = thead.querySelectorAll('th');
   const index = Array.from(headers).indexOf(sort.target);
 
