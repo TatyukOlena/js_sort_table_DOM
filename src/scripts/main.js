@@ -13,6 +13,10 @@ thead.addEventListener('click', (sort) => {
   const tbody = document.querySelector('tbody');
   const rows = Array.from(tbody.querySelectorAll('tr'));
 
+  if (index === -1) {
+    return;
+  }
+
   rows.sort((a, b) => {
     const aText = a.children[index].textContent;
     const bText = b.children[index].textContent;
